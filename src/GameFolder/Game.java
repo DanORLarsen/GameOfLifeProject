@@ -37,7 +37,7 @@ public class Game {
 
         }
     }
-
+//UPDATE UPDATES WRONG, only top left conor gets born if requirements are met.
     public void update(){
         for (int i = 0; i < getGameSizeHeight(); i++) {
             for (int j = 0; j < getGameSizeWidth(); j++) {
