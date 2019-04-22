@@ -7,12 +7,13 @@ public class Cell {
     public void update() {
         //If the cell is alive check if it should stay alive
         if (isAlive()) {
-            if (getLivingNeighbours() <= 2 && getLivingNeighbours() >= 3) {
+            if (getLivingNeighbours() == 2 || getLivingNeighbours() == 3) {
                 setAlive(true);
             } else {
                 setAlive(false);
             }
-        } else {
+        }
+        else {
             //If cell is dead, check if it will be born (3 Neighbours) else it remains dead.
             if (getLivingNeighbours() == 3) {
                 setAlive(true);
