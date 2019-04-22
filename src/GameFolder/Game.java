@@ -37,7 +37,16 @@ public class Game {
 
         }
     }
-//UPDATE UPDATES WRONG, only top left conor gets born if requirements are met.
+
+    public void updateCells(){
+        for (int i = 0; i < getGameSizeHeight(); i++) {
+            for (int j = 0; j < getGameSizeWidth(); j++) {
+        getGameArray()[i][j].update();
+            }
+        }
+    }
+
+//UPDATE Neighbours, but shouldnt update their true or false
     public void update(){
         for (int i = 0; i < getGameSizeHeight(); i++) {
             for (int j = 0; j < getGameSizeWidth(); j++) {
@@ -72,10 +81,10 @@ public class Game {
                     if (getGameArray()[i+1][j].isAlive()) {
                     neighbours++;
                 }
-                    if (j != 0)
+                    if (j != 0){
                         if (getGameArray()[i + 1][j - 1].isAlive()) {
                             neighbours++;
-                        }
+                        }}
                     if (j != getGameSizeWidth()-1){
                         if (getGameArray()[i+1][j+1].isAlive()){
                             neighbours++;
@@ -83,7 +92,6 @@ public class Game {
                     }
                 }
                 getGameArray()[i][j].setLivingNeighbours(neighbours);
-                getGameArray()[i][j].update();
                 //System.out.println(getGameArray()[i][j].isAlive());
             }
 

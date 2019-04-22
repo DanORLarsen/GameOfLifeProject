@@ -43,6 +43,7 @@ public void start(Stage stage) {
     Button updateBtn = new Button();
     updateBtn.setOnMouseClicked(event -> {
         game.update();
+        game.updateCells();
             draw(game,grid);
     });
     pane.getChildren().add(updateBtn);
@@ -60,6 +61,7 @@ public void start(Stage stage) {
         launch(args);
     }
 
+    //When a cell gets clicked do this..
     public static void updateCell(Cell[][] cells , int i, int j, Game game, GridPane grid){
         System.out.println("I was " + cells[i][j].isAlive());
         if (cells[i][j].isAlive())
@@ -69,10 +71,10 @@ public void start(Stage stage) {
         System.out.println("I GOT CLICKED!! :)  [" + i +", "+ j +"]" );
         draw(game,grid);
     }
+    //To draw a new Game, on a GridPane
     public static void draw(Game game, GridPane grid){
         for (int r = 0; r < game.getGameSizeHeight(); r++) {
             for (int c = 0; c < game.getGameSizeWidth(); c++) {
-                int number = 1;
                 Circle circle = new Circle(8);
                 final int height = r;
                 final int width = c;
