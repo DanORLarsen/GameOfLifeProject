@@ -1,6 +1,7 @@
 package GameFolder;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -79,7 +80,9 @@ public void start(Stage stage) {
                 final int height = r;
                 final int width = c;
                 circle.setOnMouseClicked(event -> {
-                    updateCell(game.getGameArray(),height,width,game,grid);
+                    //USING THREAD TO AVOID DOWNTIME WHILE DRAWING
+                    Runnable runnable = () -> updateCell(game.getGameArray(),height,width,game,grid);
+                    Platform.runLater(runnable);
                 });
                 if (game.getGameArray()[r][c].isAlive())
                 {circle.setFill(Color.BLUE);}

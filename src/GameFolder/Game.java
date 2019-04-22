@@ -4,6 +4,9 @@ public class Game {
     private int gameSizeHeight = 58;
     private int gameSizeWidth = 100;
 
+
+    //TODO ADD README WITH ANSWER TO QUESTIONS
+    //ArrayList might be best, since it got a O(1) on read, which is mostly what we do here.
     private Cell[][] gameArray = new Cell[getGameSizeHeight()][getGameSizeWidth()];
 
     //To create standard size.
