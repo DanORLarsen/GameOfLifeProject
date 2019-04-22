@@ -6,7 +6,7 @@ public class Game {
 
 
     //TODO ADD README WITH ANSWER TO QUESTIONS
-    //ArrayList might be best, since it got a O(1) on read, which is mostly what we do here.
+    //Array should be great, since it got O(1) on access, and i mostly access and change.
     private Cell[][] gameArray = new Cell[getGameSizeHeight()][getGameSizeWidth()];
 
     //To create standard size.
