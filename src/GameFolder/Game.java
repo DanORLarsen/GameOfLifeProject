@@ -19,7 +19,6 @@ public class Game {
     }*/
 
 
-
 //Dont know how to start it yet, but made it so every second vertical line is alive.
     public void createGame(){
         for (int i = 0; i < getGameSizeHeight(); i++) {
