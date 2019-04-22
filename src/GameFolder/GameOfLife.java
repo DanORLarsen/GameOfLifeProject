@@ -160,8 +160,8 @@ public void start(Stage stage) {
                 final int width = c;
                 circle.setOnMouseClicked(event -> {
                     //USING THREAD TO AVOID DOWNTIME WHILE DRAWING
-                    updateCell(game.getGameArray(),height,width,game,grid);
-
+                    Runnable runnable = () -> updateCell(game.getGameArray(),height,width,game,grid);
+                    Platform.runLater(runnable);
                 });
                 if (game.getGameArray()[r][c].isAlive())
                 {circle.setFill(Color.BLUE);}
