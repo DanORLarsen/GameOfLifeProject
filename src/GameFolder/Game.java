@@ -4,27 +4,21 @@ public class Game {
     private int gameSizeHeight = 58;
     private int gameSizeWidth = 100;
 
-    public int getGameSizeWidth() {
-        return gameSizeWidth;
-    }
-
-    public void setGameSizeWidth(int gameSizeWidth) {
-        this.gameSizeWidth = gameSizeWidth;
-    }
-
     private Cell[][] gameArray = new Cell[getGameSizeHeight()][getGameSizeWidth()];
 
-    public Cell[][] getGameArray() {
-        return gameArray;
-    }
-
+    //To create standard size.
     public Game(){
         createGame();
     }
 
-    public int getGameSizeHeight() {
-        return gameSizeHeight;
-    }
+    /*
+    public Game(int height, int width){
+        setGameSizeHeight(height);
+        setGameSizeWidth(width);
+        createGame();
+    }*/
+
+
 
 //Dont know how to start it yet, but made it so every second vertical line is alive.
     public void createGame(){
@@ -97,5 +91,22 @@ public class Game {
 
         }
     }
+    public int getGameSizeWidth() {
+        return gameSizeWidth;
+    }
 
+    public void setGameSizeWidth(int gameSizeWidth) {
+        this.gameSizeWidth = gameSizeWidth;
+    }
+    public Cell[][] getGameArray() {
+        return gameArray;
+    }
+
+    public void setGameSizeHeight(int gameSizeHeight) {
+        this.gameSizeHeight = gameSizeHeight;
+    }
+
+    public int getGameSizeHeight() {
+        return gameSizeHeight;
+    }
 }
