@@ -169,6 +169,7 @@ public void start(Stage stage) {
                     circle.setFill(Color.WHITE);
                 }
                 grid.add(circle, c, r);
+//Check if u should remove from pane from grif and then add after?
             }
         }
     }
