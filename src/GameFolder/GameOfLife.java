@@ -145,7 +145,7 @@ public void start(Stage stage) {
         draw(game,grid);
     }
     //To draw a Game object, on a GridPane
-    public static void draw(Game game, GridPane grid){
+    public synchronized static void draw(Game game, GridPane grid){
         for (int r = 0; r < game.getGameSizeHeight(); r++) {
             for (int c = 0; c < game.getGameSizeWidth(); c++) {
                 Circle circle = new Circle(8);
